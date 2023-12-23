@@ -5,6 +5,7 @@ return {
   { "github/copilot.vim"},
   {'akinsho/git-conflict.nvim', version = "*", config = true},
   {'jessekelighine/vindent.vim'},
+  {'stevearc/oil.nvim'},
 }
 
 --
