@@ -1,12 +1,7 @@
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 -- stylua: ignore
 -- 
-return {
-  { "github/copilot.vim"},
-  {'akinsho/git-conflict.nvim', version = "*", config = true},
-  {'jessekelighine/vindent.vim'},
-  {'stevearc/oil.nvim'},
-}
+return {}
 
 --
 -- if true then return {} end
