@@ -20,3 +20,18 @@ vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_set_keymap("x", "S", [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true })
 -- Make special mapping for "add surrounding for line"
 vim.api.nvim_set_keymap("n", "yss", "ys_", { noremap = false })
+
+-- vim.diagnostic.config({
+--   virtual_text = false,
+--   virtual_lines = false,
+-- })
+
+vim.api.nvim_create_user_command("DiagnosticToggle", function()
+  local config = vim.diagnostic.config
+  local vt = config().virtual_text
+  config({
+    virtual_text = not vt,
+    underline = not vt,
+    signs = not vt,
+  })
+end, { desc = "toggle diagnostic" })
