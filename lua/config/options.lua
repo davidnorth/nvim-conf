@@ -35,3 +35,14 @@ vim.api.nvim_create_user_command("DiagnosticToggle", function()
     signs = not vt,
   })
 end, { desc = "toggle diagnostic" })
+
+-- Don't create comment on new line
+vim.opt.formatoptions:remove({ "c", "r", "o" })
+
+-- Map <C-i> to send an extra Escape key press
+vim.keymap.set("i", "<C-i>", "<Esc>")
+-- Map <C-i> to clear search highlighting in normal mode
+vim.keymap.set("n", "<C-i>", ":nohl<CR>", { silent = true, noremap = true })
+
+-- Split at cursor with Shift + S
+-- vim.keymap.set("n", "<C-J>", "i<CR><Esc>", { silent = true, noremap = true })

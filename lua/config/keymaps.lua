@@ -4,3 +4,6 @@
 --
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", opts)
+
+-- in normal mode, Enter key breaks the line at cursor
+vim.api.nvim_set_keymap("n", "<CR>", "i<CR><Esc>", opts)
